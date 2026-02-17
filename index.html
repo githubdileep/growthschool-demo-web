@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pixalara Store | Digital Experiences. Engineered to Scale.</title>
+    
+    <link rel="icon" type="image/png" href="assets/images/favicon.png">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <header>
+        <nav>
+            <a href="index.html" class="logo">pixalara <span>Store</span></a>
+            
+            <div class="menu-toggle" id="mobile-menu">☰</div>
+            
+            <ul class="nav-links">
+                <li><a href="index.html" class="active">Home</a></li>
+                <li><a href="products.html">Products</a></li>
+                <li><a href="login.html">Login</a></li>
+            </ul>
+
+            <div class="search-container">
+                <input type="text" id="product-search" placeholder="Search grocery or electronics...">
+            </div>
+
+            <a href="cart.html" class="cart-icon">
+                🛒 <span id="cart-count">0</span>
+            </a>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Digital Experiences.<br>Engineered to Scale.</h1>
+            <p>Premium quality grocery and next-gen electronics delivered to your doorstep.</p>
+            <a href="products.html" class="btn">Shop the Collection</a>
+        </div>
+    </section>
+
+    <main class="container">
+        <div class="section-header" style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2rem;">
+            <h2 class="section-title" style="margin-bottom: 0;">Featured Products</h2>
+            <a href="products.html" style="color: var(--primary-blue); font-weight: 600; text-decoration: none;">View All →</a>
+        </div>
+        
+        <div id="product-container" class="product-grid">
+            </div>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-brand">
+                <h3>pixalara Store</h3>
+                <p>Digital Experiences. Engineered to Scale.</p>
+            </div>
+            <div class="footer-links">
+                <h4>Quick Links</h4>
+                <ul style="list-style: none; margin-top: 10px;">
+                    <li><a href="products.html" style="color: rgba(255,255,255,0.7); text-decoration: none; font-size: 0.9rem;">Grocery</a></li>
+                    <li><a href="products.html" style="color: rgba(255,255,255,0.7); text-decoration: none; font-size: 0.9rem;">Electronics</a></li>
+                </ul>
+            </div>
+            <div class="footer-contact">
+                <h4>Contact Us</h4>
+                <p style="font-size: 0.9rem; color: rgba(255,255,255,0.7); margin-top: 10px;">Email: support@pixalara.com</p>
+                <p style="font-size: 0.9rem; color: rgba(255,255,255,0.7);">Location: Bengaluru, India</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            &copy; 2026 Pixalara. All rights reserved.
+        </div>
+    </footer>
+
+    <div id="toast" class="toast"></div>
+
+    <script src="js/script.js"></script>
+</body>
+</html>

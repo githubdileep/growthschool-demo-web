@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Products | pixalara Store</title>
+    <link rel="icon" type="image/png" href="assets/images/favicon.png">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="index.html" class="logo">pixalara <span>Store</span></a>
+            <div class="menu-toggle" id="mobile-menu">☰</div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="products.html" class="active">Products</a></li>
+                <li><a href="login.html">Login</a></li>
+            </ul>
+            <a href="cart.html" class="cart-icon">🛒 <span id="cart-count">0</span></a>
+        </nav>
+    </header>
+
+    <main class="container">
+        <h2 class="section-title">Our Collection</h2>
+        
+        <div class="filter-bar">
+            <button class="filter-btn active" onclick="filterProducts('All', this)">All Items</button>
+            <button class="filter-btn" onclick="filterProducts('Grocery', this)">Grocery</button>
+            <button class="filter-btn" onclick="filterProducts('Electronics', this)">Electronics</button>
+        </div>
+
+        <div id="product-container" class="product-grid">
+            </div>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div>
+                <h3>pixalara Store</h3>
+                <p>Digital Experiences. Engineered to Scale.</p>
+            </div>
+        </div>
+        <div class="footer-bottom">&copy; 2026 Pixalara. All rights reserved.</div>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
