@@ -37,13 +37,15 @@
         </nav>
     </header>
 
-    <section class="hero">
-        <div class="hero-content">
-            <h1>Digital Experiences.<br>Engineered to Scale.</h1>
-            <p>Premium quality grocery and next-gen electronics delivered to your doorstep.</p>
-            <a href="products.html" class="btn">Shop the Collection</a>
+  <section class="hero-slider">
+    <div class="slider-container" id="hero-slider">
         </div>
-    </section>
+    
+    <button class="slider-nav prev" onclick="moveSlider(-1)">❮</button>
+    <button class="slider-nav next" onclick="moveSlider(1)">❯</button>
+    
+    <div class="slider-dots" id="slider-dots"></div>
+</section>
 
     <main class="container">
         <div class="section-header" style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2rem;">

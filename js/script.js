@@ -48,20 +48,8 @@ const products = [
         category: "Electronics", 
         img: "https://images.unsplash.com/photo-1523275335684-37898b6baf30?auto=format&fit=crop&q=80&w=800" 
     },
-    { 
-        id: 7, 
-        name: "Farm Fresh Milk 1L", 
-        price: 1.80, 
-        category: "Grocery", 
-        img: "https://images.unsplash.com/photo-1563636619-e910ef2a844b?auto=format&fit=crop&q=80&w=800" 
-    },
-    { 
-        id: 8, 
-        name: "Bluetooth Portable Speaker", 
-        price: 55.00, 
-        category: "Electronics", 
-        img: "https://images.unsplash.com/photo-1608156639585-34a0a5d73751?auto=format&fit=crop&q=80&w=800" 
-    }
+   
+   
 ];
 
 // 2. STATE MANAGEMENT (LocalStorage persistence)
@@ -241,3 +229,67 @@ function toggleAuth() {
     login.style.display = login.style.display === 'none' ? 'block' : 'none';
     register.style.display = register.style.display === 'none' ? 'block' : 'none';
 }
+
+// =========================================
+// HERO SLIDER ADD-ON LOGIC
+// =========================================
+let currentSlide = 0;
+// We select specific products (Headphones, Watch, Speaker) to feature in the slider
+const sliderItems = products.filter(p => [2, 6, 8].includes(p.id));
+
+function initSlider() {
+    const container = document.getElementById('hero-slider');
+    const dotsContainer = document.getElementById('slider-dots');
+    if (!container) return;
+
+    // Inject Slides
+    container.innerHTML = sliderItems.map(p => `
+        <div class="slide" style="background-image: url('${p.img}')">
+            <div class="slide-overlay"></div>
+            <div class="slide-content">
+                <span style="color:var(--accent-green); font-weight:700; text-transform:uppercase; letter-spacing:1px;">Trending in ${p.category}</span>
+                <h2>${p.name}</h2>
+                <p>Digital Experiences. Engineered to Scale.</p>
+                <div style="margin-top: 20px;">
+                    <button class="btn" onclick="addToCart(${p.id})">Buy Now — $${p.price}</button>
+                </div>
+            </div>
+        </div>
+    `).join('');
+
+    // Inject Dots
+    dotsContainer.innerHTML = sliderItems.map((_, i) => 
+        `<div class="dot ${i === 0 ? 'active' : ''}" onclick="goToSlide(${i})"></div>`
+    ).join('');
+
+    // Auto-slide trigger
+    setInterval(() => moveSlider(1), 5000);
+}
+
+function moveSlider(dir) {
+    currentSlide = (currentSlide + dir + sliderItems.length) % sliderItems.length;
+    updateSliderUI();
+}
+
+function goToSlide(index) {
+    currentSlide = index;
+    updateSliderUI();
+}
+
+function updateSliderUI() {
+    const slider = document.getElementById('hero-slider');
+    const dots = document.querySelectorAll('.dot');
+    if(!slider) return;
+    
+    slider.style.transform = `translateX(-${currentSlide * 100}%)`;
+    dots.forEach((dot, i) => {
+        dot.classList.toggle('active', i === currentSlide);
+    });
+}
+
+// Modify your existing initApp to call the slider
+const originalInit = initApp;
+initApp = function() {
+    originalInit();
+    initSlider();
+};
