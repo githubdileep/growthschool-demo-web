@@ -249,7 +249,7 @@ function initSlider() {
             <div class="slide-content">
                 <span style="color:var(--accent-green); font-weight:700; text-transform:uppercase; letter-spacing:1px;">Trending in ${p.category}</span>
                 <h2>${p.name}</h2>
-                <p>Digital Experiences. Engineered to Scale.</p>
+                <p>Smart Shopping. Delivered Simply..</p>
                 <div style="margin-top: 20px;">
                     <button class="btn" onclick="addToCart(${p.id})">Buy Now — $${p.price}</button>
                 </div>
